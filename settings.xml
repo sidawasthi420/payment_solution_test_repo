@@ -1,0 +1,85 @@
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <mirrors>
+  
+	<mirror>
+        <id>Nexus_2_Release</id>
+        <mirrorOf>central</mirrorOf>
+        <name>Sabre Nexus 2 Mirror</name>
+        <url>http://nexus.sabre.com/content/groups/all_repos/</url>
+    </mirror>
+
+  </mirrors>
+  
+  <profiles>
+    <profile>
+      <id>Sabre Profile</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+
+		 <repository>
+          <id>Nexus_2_Snapshot</id>
+          <name>Nexus 2</name>
+          <url>http://nexus.sabre.com/content/repositories/snapshots/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+	
+		<repository>
+          <id>Nexus_3_Release</id>
+          <name>Nexus 3 Release</name>
+          <url>https://repository.sabre.com/repository/maven-all/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+		
+        <repository>
+          <id>Nexus_3_Snapshot</id>
+          <name>Nexus 3 Snapshot</name>
+          <url>https://repository.sabre.com/repository/maven-snapshots/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository> 
+		
+		<!-- <repository>
+            <id>soap-ui</id>
+            <name>sabre maven repository</name>
+            <url>http://maven.sabre.com/service/local/repositories/eviware/content</url>
+        </repository> -->
+
+      </repositories>
+	  
+	  <pluginRepositories>
+		<pluginRepository>
+          <id>ssweb2-snapshots-plugin</id>
+          <name>SSWEB2 Snapshot Repository</name>
+          <url>http://maven.sabre.com/content/groups/ssweb2-snapshots</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+	  </pluginRepositories>
+    </profile>
+  </profiles>
+
+
+</settings>
